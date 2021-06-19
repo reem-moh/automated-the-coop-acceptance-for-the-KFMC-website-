@@ -6,7 +6,7 @@
     <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
     <br />
 
-    <asp:DropDownList ID="ddl" runat="server" >
+    <asp:DropDownList ID="ddl" runat="server" OnSelectedIndexChanged="ddl_SelectedIndexChanged" >
     </asp:DropDownList>
 
 </asp:Content>

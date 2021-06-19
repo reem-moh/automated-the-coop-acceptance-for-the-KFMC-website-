@@ -53,10 +53,17 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/webpage/webForm1">test</a></li>
+                        <li><a runat="server" href="~/webpage/WebForm1">test</a></li>
+                        <li><a runat="server" href="~/Account/Login">login</a></li>
+                        <li><a runat="server" href="~/Account/Registration">register</a></li>
+                        <li><a runat="server" href="~/admin">Admin</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -22,5 +22,10 @@ namespace KsuTemplate.webpage
             ddl.DataSource = dr;
             ddl.DataBind();
         }
+
+        protected void ddl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
