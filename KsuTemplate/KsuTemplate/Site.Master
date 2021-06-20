@@ -12,8 +12,9 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="navigationStyleSheet.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -37,7 +38,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        <!--
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -64,7 +65,25 @@
         <div class="main">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        </div> -->
+
+
+        <!--New Navigation Bar-->
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo">KFMC<strong>Interns</strong></div>
+            <ul class="links">
+                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="About.aspx">About</a></li>
+                <li><a href="Contact.aspx">Contact</a></li>
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
