@@ -62,27 +62,30 @@
                 </div>
             </div>
         </div>
-        <div class="main">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div> -->
+         -->
 
 
         <!--New Navigation Bar-->
+        
         <nav>
             <input id="nav-toggle" type="checkbox">
             <div class="logo">KFMC<strong>Interns</strong></div>
             <ul class="links">
-                <li><a href="Default.aspx">Home</a></li>
-                <li><a href="About.aspx">About</a></li>
-                <li><a href="Contact.aspx">Contact</a></li>
+                <li><a runat="server" href="~/">Home</a></li>
+                <li><a runat="server" href="~/About">About</a></li>
+                <li><a runat="server" href="~/Contact">Contact</a></li>
             </ul>
             <label for="nav-toggle" class="icon-burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
             </label>
         </nav>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
 
 
         <div class="container body-content">
