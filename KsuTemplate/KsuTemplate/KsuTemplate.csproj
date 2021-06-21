@@ -114,6 +114,7 @@
     <Content Include="admin\register.aspx" />
     <Content Include="admin\showRoles.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="CSS\contactStyleSheet1.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -131,7 +132,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="navigationStyleSheet.css" />
+    <Content Include="CSS\navigationStyleSheet.css" />
     <Content Include="webpage\userInfo.aspx" />
     <Content Include="admin\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

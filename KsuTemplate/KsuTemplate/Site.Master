@@ -14,8 +14,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link href="navigationStyleSheet.css" rel="stylesheet" />
-
+    <link href="CSS/navigationStyleSheet.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -66,7 +65,6 @@
 
 
         <!--New Navigation Bar-->
-        
         <nav>
             <input id="nav-toggle" type="checkbox">
             <div class="logo">KFMC<strong>Interns</strong></div>
@@ -74,6 +72,7 @@
                 <li><a runat="server" href="~/">Home</a></li>
                 <li><a runat="server" href="~/About">About</a></li>
                 <li><a runat="server" href="~/Contact">Contact</a></li>
+                <li><a runat="server" href="~/webpage/userInfo">Contact</a></li>
             </ul>
             <label for="nav-toggle" class="icon-burger">
                 <span class="line"></span>
