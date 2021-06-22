@@ -21,7 +21,6 @@ namespace KsuTemplate {
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
         
-        
         /// <summary>
         /// MainContent control.
         /// </summary>
