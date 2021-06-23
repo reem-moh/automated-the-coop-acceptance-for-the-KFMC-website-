@@ -13,6 +13,15 @@ namespace KsuTemplate.webpage {
     public partial class userInfo {
         
         /// <summary>
+        /// lblInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfo;
+        
+        /// <summary>
         /// txtIntern control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace KsuTemplate.webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMobileNum;
+        
+        /// <summary>
+        /// txtTelephone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelephone;
         
         /// <summary>
         /// txtEmail control.
@@ -67,13 +85,13 @@ namespace KsuTemplate.webpage {
         protected global::System.Web.UI.WebControls.DropDownList ddlMajor;
         
         /// <summary>
-        /// rbnTrack control.
+        /// ddlTrack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbnTrack;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTrack;
         
         /// <summary>
         /// txtSDate control.
@@ -92,5 +110,23 @@ namespace KsuTemplate.webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEDate;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

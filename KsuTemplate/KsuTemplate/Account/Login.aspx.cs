@@ -86,6 +86,17 @@ namespace KsuTemplate.Account
                 FormsAuthentication.RedirectFromLoginPage(txtUserName.Text, false);
                 // email admin when a user logged in the site
                 DateTime myDate = DateTime.Now;
+                string strRoleName = "admin";
+                if (Roles.IsUserInRole(txtUserName.Text, strRoleName))
+                {
+                    Response.Redirect("\\admin\\default.aspx");
+                }
+                else
+                {
+                    if (!Roles.IsUserInRole(txtUserName.Text, "intern"))
+                        Roles.AddUserToRole(txtUserName.Text, "intern");
+                    Response.Redirect("\\webpage\\userInfo.aspx");
+                }
             }
             else
             {
