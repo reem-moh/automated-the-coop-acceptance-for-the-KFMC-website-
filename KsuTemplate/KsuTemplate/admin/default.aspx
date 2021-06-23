@@ -7,6 +7,8 @@
         <li><a runat="server" href="~/admin/changePassword">Change Password</a></li>
         <li><a runat="server" href="~/admin/passwordRecovery">Password Recovery</a></li>
         <li><a runat="server" href="~/admin/register">Register</a></li>
+       <li><a runat="server" href="~/admin/internInfo">Interns</a></li>
+
     </ul>
 
 </asp:Content>
