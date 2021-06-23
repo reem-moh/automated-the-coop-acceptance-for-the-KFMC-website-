@@ -15,62 +15,51 @@ namespace KsuTemplate
         {
 
         }
-        public string sendEmailViaGmail() // worked 100%, this is a nice one use it with  properties
+        protected void btnSubmit_Click1(object sender, EventArgs e)
         {
-            string myFrom = "kfmcintern@gmail.com"; // put your email account (from )
-            string myTo = "kfmcintern@gmail.com"; // put your email account (to )
-            string mySubject = "test sending email ";
-            string myBody = " email message content";
-
-            string myHostsmtpAddress = "smtp.gmail.com";//"smtp.mail.yahoo.com";  //mail.wdbcs.com 
-            int myPortNumber = 587;
-            bool myEnableSSL = true;
-            string myUserName = "kfmcintern@gmail.com";//;
-            string myPassword = "KFMCIntern1234";//;
-
-            //string visitorUserName = Page.User.Identity.Name;
-            using (MailMessage m = new MailMessage(myFrom, myTo, mySubject, myBody)) // .............................1
+            try
             {
-                SmtpClient sc = new SmtpClient(myHostsmtpAddress, myPortNumber); //..................................2
-                try
+                if (Page.IsValid)
                 {
-                    sc.Credentials = new System.Net.NetworkCredential(myUserName, myPassword);  //.................3
-                    sc.EnableSsl = true;
-                    sc.Send(m);
-                    return "Email Send successfully";
-                    //lblMsg.Text = ("Email Send successfully");
-                    //lblMsg.ForeColor = Color.Green; // using System.Drawing above 2/2018
+                    MailMessage mailMessage = new MailMessage();
+                    mailMessage.From = new MailAddress("kfmcintern@gmail.com");
+                    mailMessage.To.Add("kfmcintern@gmail.com");
+                    mailMessage.Subject = txtSubject.Text;
+                    //Message Body
+                    mailMessage.Body = "<b>Sender Name: </b>" + txtName.Text + "<br/>"
+                        + "< b > Sender Email: </ b > " + txtEmail.Text + "<br/>"
+                        + "< b > Message: </ b > " + txtMessage.Text;
+
+                    //Tell mail message the mail contain HTML objects:
+                    mailMessage.IsBodyHtml = true;
+
+                    //Send Mail Message: 
+                    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Credentials = new System.Net.NetworkCredential("kfmcintern@gmail.com", "KFMCIntern1234");
+
+                    smtpClient.Send(mailMessage);
+
+                    //Show Label message
+                    lblOutput.ForeColor = System.Drawing.Color.Black;
+                    lblOutput.Text = "Thank You For Contacting Us";
+
+                    //Disables Controls
+                    txtName.Enabled = false;
+                    txtEmail.Enabled = false;
+                    txtSubject.Enabled = false;
+                    txtMessage.Enabled = false;
                 }
-                catch (SmtpFailedRecipientException ex)
-                {
-                    SmtpStatusCode statusCode = ex.StatusCode;
-                    if (statusCode == SmtpStatusCode.MailboxBusy || statusCode == SmtpStatusCode.MailboxUnavailable || statusCode == SmtpStatusCode.TransactionFailed)
-                    {   // wait 5 seconds, try a second time
-                        Thread.Sleep(5000);
-                        sc.Send(m);
-                        return ex.Message.ToString();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    return ex.Message.ToString();
-                }
-                finally
-                {
-                    m.Dispose();
-                }
-            }// end using 
+            }
+            catch (Exception ex)
+            {
+                lblOutput.ForeColor = System.Drawing.Color.Blue;
+                lblOutput.ForeColor = System.Drawing.Color.DarkRed;
+                lblOutput.Text = "There is a problem. Please Try later!";
+
+            }
+
         }
 
-
-        protected void btnSendEmail_Click(object sender, EventArgs e)
-        {
-            string msg = sendEmailViaGmail();
-            lblOutput.Text = msg;
-        }
     }
 }
