@@ -14,6 +14,7 @@
                     <asp:ListItem Value="1">Effective Date Notice Form</asp:ListItem> 
                     <asp:ListItem Value="2">Training Plan Form</asp:ListItem>
                     <asp:ListItem Value="3">Trainee&#39;s Attendance Form</asp:ListItem>
+                    <asp:ListItem Value="4">All</asp:ListItem>
                 </asp:RadioButtonList>
             </td>
         </tr>
