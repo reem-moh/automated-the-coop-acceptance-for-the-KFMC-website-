@@ -121,12 +121,14 @@
     <Content Include="admin\register.aspx" />
     <Content Include="admin\showRoles.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="CSS\AboutStyleSheet1.css" />
     <Content Include="CSS\contactStyleSheet1.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CSS\img %281%29.png" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
