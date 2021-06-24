@@ -21,6 +21,7 @@
                 </br>
                 </br>
                 <a href="webpage/userInfo.aspx" class="btn btn-primary btn-lg">Profile</a>
+                <a href="webpage/template.aspx" class="btn btn-primary btn-lg">Template</a>
                 <asp:LoginStatus class="btn btn-primary btn-lg" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
                  LogoutPageUrl="~/default.aspx" />
             </LoggedInTemplate>

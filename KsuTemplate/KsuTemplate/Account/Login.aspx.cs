@@ -116,7 +116,7 @@ namespace KsuTemplate.Account
                 userFound = Membership.ValidateUser(userName, password);
                 lblOutput.Text = Session["Username"].ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 lblOutput.Text = "sorry try agian later  ";
             }
