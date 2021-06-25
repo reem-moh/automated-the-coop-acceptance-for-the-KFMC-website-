@@ -11,7 +11,7 @@
                 <td class="text-right"><strong>Summary of Training Plan</strong></td>
                 <td class="text-left">
                     <br />
-                    <asp:TextBox ID="TextBox1" runat="server" BorderColor="#EEEEEE" BorderStyle="Solid" Height="125px" Width="400px"></asp:TextBox>
+                    <asp:TextBox ID="txtSummary" runat="server" BorderColor="#EEEEEE" Height="125px" TextMode="MultiLine" Width="400px"></asp:TextBox>
                     <br />
                 </td>
             </tr>
@@ -19,7 +19,7 @@
                 <td class="text-right"><strong>Expected Training Outcomes</strong></td>
                 <td class="text-left">
                     <br />
-                    <asp:TextBox ID="TextBox2" runat="server" BorderColor="#EEEEEE" BorderStyle="Solid" Height="125px" Width="400px"></asp:TextBox>
+                    <asp:TextBox ID="txtOutcomes" runat="server" BorderColor="#EEEEEE" Height="125px" TextMode="MultiLine" Width="400px"></asp:TextBox>
                     <br />
                 </td>
             </tr>

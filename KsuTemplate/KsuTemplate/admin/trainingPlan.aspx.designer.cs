@@ -13,22 +13,22 @@ namespace KsuTemplate.admin {
     public partial class trainingPlan {
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtSummary;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txtOutcomes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtOutcomes;
         
         /// <summary>
         /// btnSubmit control.
