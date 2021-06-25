@@ -33,7 +33,13 @@ namespace KsuTemplate.webpage
                 {
                     btnDoc.Visible=true;
                     btnPdf.Visible = true;
+                    if (!Page.IsPostBack)  
+                    {
+                        populateTemplateComb();
+                    }
                     
+
+
                 }
 
                 
@@ -74,9 +80,9 @@ namespace KsuTemplate.webpage
             CRUD myCrud = new CRUD();
             string mySql = @"SELECT internId, intern, majorId
                              , trackId, id, internMobile, telephone
-                            , internEmail, startDate, endDate, userName
+                            , internEmail, startDate, endDate
                              FROM intern
-                             WHERE userName = @userName";
+                             WHERE userName = @userName AND universityId = 1";
 
             Dictionary<String, object> myPara = new Dictionary<String, object>();
             myPara.Add("@userName", Session["Username"]);
@@ -206,17 +212,6 @@ namespace KsuTemplate.webpage
                 }
             }
 
-            //Department info
-            //CRUD departmentCrud = new CRUD();
-            //string departmentSql = @"SELECT department
-            //                          FROM department
-            //                          WHERE departmentId=@departmentId";
-
-            //Dictionary<String, object> departmentPara = new Dictionary<String, object>();
-            //departmentPara.Add("@departmentId", 1);
-            //SqlDataReader departmentDr = departmentCrud.getDrPassSql(departmentSql, departmentPara);
-            //String department = departmentDr["department"].ToString();
-
             CRUD departmentCrud = new CRUD();
             string departmentSql = @"SELECT department
                                       FROM department
@@ -235,7 +230,6 @@ namespace KsuTemplate.webpage
                     break;
                 }
             }
-            //String department = "department";
 
             object[] effectData = new object[]{
                 intern, id, internMobile, telephone, internEmail,
@@ -245,6 +239,230 @@ namespace KsuTemplate.webpage
                                  supervisorPosition, supervisorTelephone, supervisorMobile,
                                  supervisorEmail, startDate };
             return effectData;
+        }
+
+        protected Document mailMergeptPlane()
+        {
+            String dataDir = "~\\template\\";
+            String fileName = "new_pt_plan_form.docx";
+            // Open an existing document.
+            Document doc = new Document(Server.MapPath(dataDir + fileName));
+
+            // Trim trailing and leading whitespaces mail merge values
+            doc.MailMerge.TrimWhitespaces = false;
+
+            // Fill the fields in the document with template data.
+            String[] ptPlaneTemplate = new string[] 
+            {
+               "Intern", "Id", "Mobile", "Email",
+               "IT", "CS", "SWE", "IS",
+               "NS", "DM", "WM", "CyberS", "DS", "NIOT",
+               "Institution", "Address", "Department", "TrainingSupervisor",
+               "Position", "InstitutionTelephone", "InstitutionMobile",
+               "InstitutionEmail", "StartingDate",
+               "Summary", "Outcomes", "From", "To"
+            };
+
+            object[] pt = ptPlane();
+
+            doc.MailMerge.Execute(ptPlaneTemplate, pt);
+
+            return doc;
+
+        }
+
+        protected object[] ptPlane()
+        {
+            //intern info
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT internId, intern, majorId
+                             , trackId, id, internMobile
+                            , internEmail, startDate
+                             FROM intern
+                             WHERE userName = @userName AND universityId = 1";
+
+            Dictionary<String, object> myPara = new Dictionary<String, object>();
+            myPara.Add("@userName", Session["Username"]);
+            SqlDataReader dr = myCrud.getDrPassSql(mySql, myPara);
+            String intern = "";
+            String id = "";
+            String internMobile = "";
+            String internEmail = "";
+            int majorId = -1;
+            int trackId = -1;
+            String startDate = "";
+
+            //major
+            String IT = "False";
+            String CS = "False";
+            String SWE = "False";
+            String IS = "False";
+
+            //Track
+            String NS = "False";
+            String DM = "False";
+            String WM = "False";
+            String CyberS = "False";
+            String DS = "False";
+            String NIOT = "False";
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    intern = dr["intern"].ToString();
+                    id = dr["id"].ToString();
+                    internMobile = dr["internMobile"].ToString();
+                    internEmail = dr["internEmail"].ToString();
+                    majorId = int.Parse(dr["majorId"].ToString());
+
+                    if (majorId == 1)
+                    {
+                        IT = "True";
+                        trackId = int.Parse(dr["trackId"].ToString());
+                        switch (trackId)
+                        {
+                            case 4:
+                                NS = "True";
+                                break;
+
+                            case 5:
+                                DM = "True";
+                                break;
+
+                            case 6:
+                                WM = "True";
+                                break;
+
+                            case 7:
+                                CyberS = "True";
+                                break;
+                            case 8:
+                                DS = "True";
+                                break;
+
+                            case 9:
+                                NIOT = "True";
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (majorId)
+                        {
+                            case 2:
+                                CS = "True";
+                                break;
+
+                            case 3:
+                                SWE = "True";
+                                break;
+
+                            case 4:
+                                IS = "True";
+                                break;
+                        }
+                    }
+
+                    startDate = Convert.ToDateTime(dr["startDate"]).ToString("MM-dd-yyyy");
+                    break;
+                }
+            }
+
+
+            //institution info
+            CRUD instituationCrud = new CRUD();
+            string instituationSql = @"SELECT institution,address,departmentId,supervisorName,
+                                        supervisorPosition,supervisorTelephone 
+                                        ,supervisorEmail,supervisorMobile
+                                          FROM institution
+                                          WHERE institutionId=@institutionId";
+
+            Dictionary<String, object> instituationPara = new Dictionary<String, object>();
+            //4 = Kfmc
+            instituationPara.Add("@institutionId", 4);
+            SqlDataReader instituationDr = instituationCrud.getDrPassSql(instituationSql, instituationPara);
+            String institution = "";
+            String address = "";
+            int departmentId = 1;
+            String supervisorName = "";
+            String supervisorPosition = "";
+            String supervisorTelephone = "";
+            String supervisorEmail = "";
+            String supervisorMobile = "";
+
+            if (instituationDr.HasRows)
+            {
+                while (instituationDr.Read())
+                {
+                    institution = instituationDr["institution"].ToString();
+                    address = instituationDr["address"].ToString();
+                    departmentId = int.Parse(instituationDr["departmentId"].ToString());
+                    supervisorName = instituationDr["supervisorName"].ToString();
+                    supervisorPosition = instituationDr["supervisorPosition"].ToString();
+                    supervisorTelephone = instituationDr["supervisorTelephone"].ToString();
+                    supervisorEmail = instituationDr["supervisorEmail"].ToString();
+                    supervisorMobile = instituationDr["supervisorMobile"].ToString();
+                    break;
+                }
+            }
+
+            //department
+            CRUD departmentCrud = new CRUD();
+            string departmentSql = @"SELECT department
+                                      FROM department
+                                      WHERE departmentId=@departmentId";
+
+            Dictionary<String, object> departmentPara = new Dictionary<String, object>();
+            //1 = IT
+            departmentPara.Add("@departmentId", 1);
+            SqlDataReader departmentDr = departmentCrud.getDrPassSql(departmentSql, departmentPara);
+            String department = "";
+
+            if (departmentDr.HasRows)
+            {
+                while (departmentDr.Read())
+                {
+                    department = departmentDr["department"].ToString();
+                    break;
+                }
+            }
+
+            //training plane
+            CRUD trainingPlaneCrud = new CRUD();
+            string trainingPlaneSql = @"SELECT summary, outcomes, timeFrom, timeTo
+                                      FROM trainingPlane
+                                      WHERE trainingPlaneId = 1";
+
+            SqlDataReader trainingPlaneDr = trainingPlaneCrud.getDrPassSql(trainingPlaneSql);
+            String summary = "";
+            String outcomes = "";
+            int timeFrom= 0;
+            int timeTo = 0;
+
+            if (trainingPlaneDr.HasRows)
+            {
+                while (trainingPlaneDr.Read())
+                {
+                    summary = trainingPlaneDr["summary"].ToString();
+                    outcomes = trainingPlaneDr["outcomes"].ToString();
+                    timeFrom = int.Parse(trainingPlaneDr["timeFrom"].ToString());
+                    timeTo = int.Parse(trainingPlaneDr["timeTo"].ToString());
+                    break;
+                }
+            }
+
+            object[] pt = new object[]
+            {
+                intern, id, internMobile, internEmail,
+                IT, CS, SWE, IS,
+                NS, DM, WM, CyberS, DS, NIOT,
+                institution,address, department, supervisorName,
+                supervisorPosition, supervisorTelephone, supervisorMobile,
+                supervisorEmail, startDate,
+                summary, outcomes, timeFrom ,timeTo
+            };
+            return pt;
         }
 
         protected void saveAsDoc(Document doc, String fileName)
@@ -279,8 +497,24 @@ namespace KsuTemplate.webpage
             {
                 Response.Redirect("\\Account\\Login.aspx");
             }
-            Document doc = mailMergeEffect();
-            saveAsDoc(doc, "\\effectivejsdkh.docx");
+
+           
+            if (ddlTemplate.SelectedValue == "1")
+            {
+                Document doc = mailMergeEffect();
+                saveAsDoc(doc, "\\effectNoticeDate.docx");
+            }
+            else if (ddlTemplate.SelectedValue == "2")
+            {
+                
+            }
+            else if (ddlTemplate.SelectedValue == "3")
+            {
+                Document doc = mailMergeptPlane();
+                saveAsDoc(doc, "\\ptPlane.docx");
+            }
+
+            
         }
 
         protected void btnPdf_Click(object sender, EventArgs e)
@@ -289,9 +523,37 @@ namespace KsuTemplate.webpage
             {
                 Response.Redirect("\\Account\\Login.aspx");
             }
-            Document doc = mailMergeEffect();
-            saveAsDoc(doc, "\\effective.Pdf");
 
+            
+            if (ddlTemplate.SelectedValue == "1")
+            {
+                Document doc = mailMergeEffect();
+                saveAsPdf(doc, "\\effective.Pdf");
+            }
+            else if (ddlTemplate.SelectedValue == "2")
+            {
+
+            }
+            else if (ddlTemplate.SelectedValue == "3")
+            {
+                Document doc = mailMergeptPlane();
+                saveAsPdf(doc, "\\ptPlane.Pdf");
+            }
+
+        }
+
+        protected void populateTemplateComb()
+        {
+            // code to connect to db  and pull Template information 
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT templateId,template
+                              FROM template
+                              WHERE universityId=1 ";
+            SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            ddlTemplate.DataValueField = "templateId";
+            ddlTemplate.DataTextField = "template";
+            ddlTemplate.DataSource = dr;
+            ddlTemplate.DataBind();
         }
     }
 }

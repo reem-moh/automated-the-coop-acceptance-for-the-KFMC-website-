@@ -67,13 +67,13 @@ namespace KsuTemplate.webpage {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// txtUni control.
+        /// ddlUni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUni;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUni;
         
         /// <summary>
         /// ddlMajor control.

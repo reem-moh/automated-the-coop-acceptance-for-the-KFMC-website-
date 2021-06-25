@@ -47,7 +47,8 @@
         <tr>
             <td style="text-align: center">University name:</td>
             <td>
-                <asp:TextBox ID="txtUni" runat="server" Enabled="False">King Saud University</asp:TextBox>
+                <asp:DropDownList ID="ddlUni" runat="server" AutoPostBack="True">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>

@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
         <br />
-        Efffective date notice Template</p>
+        <asp:DropDownList ID="ddlTemplate" runat="server" AutoPostBack="True">
+        </asp:DropDownList>
+    </p>
     <p>
         <asp:Label ID="lblData" runat="server"></asp:Label>
         <br />

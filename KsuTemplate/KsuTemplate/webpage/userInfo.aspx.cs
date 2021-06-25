@@ -28,10 +28,10 @@ namespace KsuTemplate.webpage
         {
             CRUD myCrud = new CRUD();
             string mySql = @"SELECT internId, intern, majorId
-                             , trackId, id, internMobile, telephone
-                            , internEmail, startDate, endDate, userName
-                             FROM intern
-                             WHERE userName = @userName";
+                            , trackId, id, internMobile, telephone
+                            , internEmail, startDate, endDate, userName,universityId
+                                FROM intern
+                                WHERE userName = @userName";
 
             Dictionary<String, object> myPara = new Dictionary<String, object>();
             
@@ -47,9 +47,11 @@ namespace KsuTemplate.webpage
                     txtMobileNum.Text = dr["internMobile"].ToString();
                     txtTelephone.Text = dr["telephone"].ToString();
                     txtEmail.Text = dr["internEmail"].ToString();
+                    int uniId = int.Parse(dr["universityId"].ToString());
+                    showUniversity(uniId);
                     int majorId = -1;
                      majorId = int.Parse(dr["majorId"].ToString());
-
+                    
                     showMajor(majorId);
                     if (majorId == 1)
                     {
@@ -74,19 +76,28 @@ namespace KsuTemplate.webpage
 
         }
 
+        //display intern University
+        protected void showUniversity(int uniId)
+        {
+
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT university, universityId
+                              FROM university
+                              WHERE universityId=@uniId";
+            Dictionary<String, object> myPara = new Dictionary<String, object>();
+
+            myPara.Add("@uniId", uniId);
+            SqlDataReader dr = myCrud.getDrPassSql(mySql, myPara);
+            ddlUni.DataTextField = "university";
+            ddlUni.DataValueField = "universityId";
+            ddlUni.DataSource = dr;
+            ddlUni.DataBind();
+            ddlUni.SelectedValue = "" + uniId;
+        }
+
         //display intern Major
         protected void showMajor(int majorId)
         {
-            //CRUD myCrud = new CRUD();
-            //string mySql = @"SELECT majorId ,major FROM major
-            //                 WHERE majorId = @majorId";
-            //Dictionary<String, object> myPara = new Dictionary<String, object>();
-            //myPara.Add("@majorId", majorId);
-            //SqlDataReader dr = myCrud.getDrPassSql(mySql, myPara);
-            //ddlMajor.DataTextField = "major";
-            //ddlMajor.DataValueField = "majorId";
-            //ddlMajor.DataSource = dr;
-            //ddlMajor.DataBind();
 
             CRUD myCrud = new CRUD();
             string mySql = @"SELECT majorId ,major FROM major";
@@ -101,17 +112,6 @@ namespace KsuTemplate.webpage
         //display intern Track
         protected void showTrack(int trackId)
         {
-            //CRUD myCrud = new CRUD();
-            //string mySql = @"SELECT trackId,track
-            //                        FROM track
-            //                      WHERE trackId = @trackId";
-            //Dictionary<String, object> myPara = new Dictionary<String, object>();
-            //myPara.Add("@trackId", trackId);
-            //SqlDataReader dr = myCrud.getDrPassSql(mySql, myPara);
-            //ddlTrack.DataTextField = "track";
-            //ddlTrack.DataValueField = "trackId";
-            //ddlTrack.DataSource = dr;
-            //ddlTrack.DataBind();
 
             CRUD myCrud = new CRUD();
             string mySql = @"SELECT trackId,track
