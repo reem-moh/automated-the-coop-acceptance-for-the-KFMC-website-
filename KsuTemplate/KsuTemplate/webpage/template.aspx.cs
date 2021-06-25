@@ -241,7 +241,7 @@ namespace KsuTemplate.webpage
             return effectData;
         }
 
-        protected Document mailMergeptPlane()
+        protected Document mailMergeptPlan()
         {
             String dataDir = "~\\template\\";
             String fileName = "new_pt_plan_form.docx";
@@ -263,7 +263,7 @@ namespace KsuTemplate.webpage
                "Summary", "Outcomes", "From", "To"
             };
 
-            object[] pt = ptPlane();
+            object[] pt = ptPlan();
 
             doc.MailMerge.Execute(ptPlaneTemplate, pt);
 
@@ -271,7 +271,7 @@ namespace KsuTemplate.webpage
 
         }
 
-        protected object[] ptPlane()
+        protected object[] ptPlan()
         {
             //intern info
             CRUD myCrud = new CRUD();
@@ -510,8 +510,8 @@ namespace KsuTemplate.webpage
             }
             else if (ddlTemplate.SelectedValue == "3")
             {
-                Document doc = mailMergeptPlane();
-                saveAsDoc(doc, "\\ptPlane.docx");
+                Document doc = mailMergeptPlan();
+                saveAsDoc(doc, "\\ptPlan.docx");
             }
 
             
@@ -536,8 +536,8 @@ namespace KsuTemplate.webpage
             }
             else if (ddlTemplate.SelectedValue == "3")
             {
-                Document doc = mailMergeptPlane();
-                saveAsPdf(doc, "\\ptPlane.Pdf");
+                Document doc = mailMergeptPlan();
+                saveAsPdf(doc, "\\ptPlan.Pdf");
             }
 
         }
