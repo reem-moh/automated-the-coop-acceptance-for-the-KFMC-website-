@@ -41,7 +41,7 @@ namespace KsuTemplate
                     smtpClient.Send(mailMessage);
 
                     //Show Label message
-                    lblOutput.ForeColor = System.Drawing.Color.Black;
+                    lblOutput.ForeColor = System.Drawing.Color.Green;
                     lblOutput.Text = "Thank You For Contacting Us";
 
                     //Disables Controls
@@ -53,7 +53,7 @@ namespace KsuTemplate
             }
             catch (Exception ex)
             {
-                lblOutput.ForeColor = System.Drawing.Color.Blue;
+                lblOutput.ForeColor = System.Drawing.Color.Green;
                 lblOutput.ForeColor = System.Drawing.Color.DarkRed;
                 lblOutput.Text = "There is a problem. Please Try later!";
 
