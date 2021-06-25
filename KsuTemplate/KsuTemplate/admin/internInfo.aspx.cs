@@ -24,8 +24,8 @@ namespace KsuTemplate.admin
         protected void btnShowAllIntern_Click(object sender, EventArgs e)
         {
             CRUD myCrud = new CRUD();
-            string mySql = @"select internId, intern, internMobile, major, track from intern i 
-            inner join major m on i.majorId = m.majorId inner join track t on i.trackId = t.trackId"; 
+            string mySql = @"select internId, intern, internMobile, university, major from intern i 
+            inner join university u on i.universityId= u.universityId inner join major m on i.majorId = m.majorId"; 
             SqlDataReader dr = myCrud.getDrPassSql(mySql);
             gvInternInfo.DataSource = dr;
             gvInternInfo.DataBind();
