@@ -72,6 +72,7 @@ namespace KsuTemplate.webpage
             else
             {
                 populateMajorCombo();
+                populateUniversityCombo();
             }
 
         }
@@ -134,6 +135,18 @@ namespace KsuTemplate.webpage
             ddlMajor.DataValueField = "majorId";
             ddlMajor.DataSource = dr;
             ddlMajor.DataBind();
+        }
+
+        protected void populateUniversityCombo()
+        {
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT university, universityId
+                              FROM university";
+            SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            ddlUni.DataTextField = "university";
+            ddlUni.DataValueField = "universityId";
+            ddlUni.DataSource = dr;
+            ddlUni.DataBind();
         }
 
         protected void ddlMajor_SelectedIndexChanged(object sender, EventArgs e)
