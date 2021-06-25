@@ -22,15 +22,6 @@ namespace KsuTemplate.admin {
         protected global::System.Web.UI.WebControls.RadioButtonList rbnForms;
         
         /// <summary>
-        /// gvInternInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvInternInfo;
-        
-        /// <summary>
         /// btnExportToWord control.
         /// </summary>
         /// <remarks>
@@ -40,12 +31,21 @@ namespace KsuTemplate.admin {
         protected global::System.Web.UI.WebControls.Button btnExportToWord;
         
         /// <summary>
-        /// btnExportToPdf control.
+        /// btnShowAllIntern control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportToPdf;
+        protected global::System.Web.UI.WebControls.Button btnShowAllIntern;
+        
+        /// <summary>
+        /// gvInternInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvInternInfo;
     }
 }

@@ -19,29 +19,29 @@
 
 					
                       </div>
-                   <table align="center" cellpadding="2" class="nav-justified" style="height: 316px; width: 74%;">
+                   <table align="center" cellpadding="2" class="nav-justified" style="height: 316px; width: 86%;">
                        <tr>
-                           <td class="text-center" style="width: 124px; height: 60px">Name</td>
+                           <td class="text-center" style="width: 108px; height: 60px">Name</td>
                            <td style="height: 60px">
-                               <asp:TextBox ID="txtName" runat="server" BorderColor="#E4E4E4" Height="30px" Width="190px" BorderStyle="Solid"></asp:TextBox>
+                               <asp:TextBox ID="txtName" runat="server" BorderColor="#E4E4E4" Height="30px" Width="220px" BorderStyle="Solid"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="text-center" style="width: 124px; height: 62px">Email</td>
+                           <td class="text-center" style="width: 108px; height: 62px">Email</td>
                            <td style="height: 62px">
-                               <asp:TextBox ID="txtEmail" runat="server" Height="30px" Width="190px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
+                               <asp:TextBox ID="txtEmail" runat="server" Height="30px" Width="220px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="text-center" style="width: 124px; height: 60px">Subject</td>
+                           <td class="text-center" style="width: 108px; height: 60px">Subject</td>
                            <td style="height: 60px">
-                               <asp:TextBox ID="txtSubject" runat="server" Height="30px" Width="190px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
+                               <asp:TextBox ID="txtSubject" runat="server" Height="30px" Width="220px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
-                           <td class="text-center" style="width: 124px; height: 99px">Message</td>
+                           <td class="text-center" style="width: 108px; height: 99px">Message</td>
                            <td class="text-center" style="height: 99px">
-                               <asp:TextBox ID="txtMessage" runat="server" Height="70px" TextMode="MultiLine" Width="190px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
+                               <asp:TextBox ID="txtMessage" runat="server" Height="78px" TextMode="MultiLine" Width="220px" BorderColor="#E4E4E4" BorderStyle="Solid"></asp:TextBox>
                            </td>
                        </tr>
                        <tr>
