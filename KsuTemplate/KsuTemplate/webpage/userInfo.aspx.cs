@@ -15,7 +15,7 @@ namespace KsuTemplate.webpage
         {
             if (Session["Username"] == null)
             {
-                Response.Redirect("\\Account\\Login.aspx");
+                Response.Redirect("~\\Account\\Login.aspx");
             }
             if (!Page.IsPostBack)
             {
@@ -230,7 +230,7 @@ namespace KsuTemplate.webpage
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("\\Default.aspx");
+            Response.Redirect("~\\Default.aspx");
         }
 
         protected void updateData()

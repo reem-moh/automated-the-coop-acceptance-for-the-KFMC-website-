@@ -495,7 +495,7 @@ namespace KsuTemplate.webpage
         {
             if (Session["Username"] == null)
             {
-                Response.Redirect("\\Account\\Login.aspx");
+                Response.Redirect("~\\Account\\Login.aspx");
             }
 
            
@@ -521,7 +521,7 @@ namespace KsuTemplate.webpage
         {
             if (Session["Username"] == null)
             {
-                Response.Redirect("\\Account\\Login.aspx");
+                Response.Redirect("~\\Account\\Login.aspx");
             }
 
             
