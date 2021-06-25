@@ -120,6 +120,7 @@
     <Content Include="admin\passwordRecovery.aspx" />
     <Content Include="admin\register.aspx" />
     <Content Include="admin\showRoles.aspx" />
+    <Content Include="admin\trainingPlan.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CSS\AboutStyleSheet1.css" />
     <Content Include="CSS\contactStyleSheet1.css" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="admin\showRoles.aspx.designer.cs">
       <DependentUpon>showRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\trainingPlan.aspx.cs">
+      <DependentUpon>trainingPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\trainingPlan.aspx.designer.cs">
+      <DependentUpon>trainingPlan.aspx</DependentUpon>
     </Compile>
     <Compile Include="webpage\template.aspx.cs">
       <DependentUpon>template.aspx</DependentUpon>

@@ -12,7 +12,7 @@ div {text-align: center;}
     <div>
     <pre>
     &nbsp
-    <a runat="server" href="~/admin/showRoles" class="btn btn-primary btn-lg">show Roles </a> <a runat="server" href="~/admin/changePassword" class="btn btn-primary btn-lg">Change Password</a> <a runat="server" href="~/admin/passwordRecovery" class="btn btn-primary btn-lg">Password Recovery</a> <a runat="server" href="~/admin/register" class="btn btn-primary btn-lg">Register</a> <a runat="server" href="~/admin/internInfo" class="btn btn-primary btn-lg">Interns</a>
+    <a runat="server" href="~/admin/showRoles" class="btn btn-primary btn-lg">show Roles </a> <a runat="server" href="~/admin/changePassword" class="btn btn-primary btn-lg">Change Password</a> <a runat="server" href="~/admin/passwordRecovery" class="btn btn-primary btn-lg">Password Recovery</a> <a runat="server" href="~/admin/register" class="btn btn-primary btn-lg">Register</a> <a runat="server" href="~/admin/internInfo" class="btn btn-primary btn-lg">Interns</a> <a runat="server" href="~/admin/trainingPlan" class="btn btn-primary btn-lg">Training Plan</a>
 
    </pre>
         </div>
