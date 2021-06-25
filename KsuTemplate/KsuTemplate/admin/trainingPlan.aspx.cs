@@ -16,7 +16,7 @@ namespace KsuTemplate.admin
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
+             
         }
     }
 }
