@@ -6,14 +6,14 @@
 
     <link href="CSS/contactStyleSheet1.css" rel="stylesheet" />
 
-    <div class="container-contact100">
+    <h3 class="text-center">
+        <asp:Label ID="lblInfo" runat="server" ForeColor="#339966"></asp:Label>
+    </h3>
+    
+    <div class="container-contact100 jumbotron">
         <div class="wrap-contact100" style="text-align: center">
-            <br />
-            <br />
-            <h3>
-                <asp:Label ID="lblInfo" runat="server" ForeColor="#339966"></asp:Label>
-            </h3>
-            <h2>Intern Information</h2>
+
+            <h2 class="text-center">Intern Information</h2>
             <table class="nav-justified" style="height: 316px; width: 86%;">
                 <tr>
                     <td class="text-center" style="width: 108px; height: 60px">Intern name:</td>
@@ -96,5 +96,8 @@
             <asp:Button ID="btnCancel" runat="server" BackColor="#2E5882" ForeColor="White" Height="42px" OnClick="btnCancel_Click" Text="Cancel" Width="175px" BorderColor="#2E5882" CssClass="btn btn-primary btn-lg" />
         </div>
     </div>
+    <br />
+    <br />
+    <br />
 
 </asp:Content>

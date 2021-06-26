@@ -6,7 +6,7 @@
     <h2  class="text-center">Intern Templates</h2>
     
 
-    <div class="container-contact100">
+    <div  class="jumbotron">
         <div class="wrap-contact100" style="text-align: center">
             <p class="text-center">
                 <br />
