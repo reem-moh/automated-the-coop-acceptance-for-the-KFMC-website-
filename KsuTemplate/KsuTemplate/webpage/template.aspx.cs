@@ -35,10 +35,9 @@ namespace KsuTemplate.webpage
                     btnPdf.Visible = true;
                     if (!Page.IsPostBack)  
                     {
+                        populateUniversityComb();
                         populateTemplateComb();
                     }
-                    
-
 
                 }
 
@@ -428,11 +427,11 @@ namespace KsuTemplate.webpage
                 }
             }
 
-            //training plane
+            //training plan
             CRUD trainingPlaneCrud = new CRUD();
             string trainingPlaneSql = @"SELECT summary, outcomes, timeFrom, timeTo
-                                      FROM trainingPlane
-                                      WHERE trainingPlaneId = 1";
+                                      FROM trainingPlan
+                                      WHERE trainingPlanId = 1";
 
             SqlDataReader trainingPlaneDr = trainingPlaneCrud.getDrPassSql(trainingPlaneSql);
             String summary = "";
@@ -504,10 +503,6 @@ namespace KsuTemplate.webpage
                 Document doc = mailMergeEffect();
                 saveAsDoc(doc, "\\effectNoticeDate.docx");
             }
-            else if (ddlTemplate.SelectedValue == "2")
-            {
-                
-            }
             else if (ddlTemplate.SelectedValue == "3")
             {
                 Document doc = mailMergeptPlan();
@@ -530,10 +525,6 @@ namespace KsuTemplate.webpage
                 Document doc = mailMergeEffect();
                 saveAsPdf(doc, "\\effective.Pdf");
             }
-            else if (ddlTemplate.SelectedValue == "2")
-            {
-
-            }
             else if (ddlTemplate.SelectedValue == "3")
             {
                 Document doc = mailMergeptPlan();
@@ -550,6 +541,34 @@ namespace KsuTemplate.webpage
                               FROM template
                               WHERE universityId=1 ";
             SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            ddlTemplate.DataValueField = "templateId";
+            ddlTemplate.DataTextField = "template";
+            ddlTemplate.DataSource = dr;
+            ddlTemplate.DataBind();
+        }
+
+        protected void populateUniversityComb()
+        {
+            // code to connect to db  and pull Template information 
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT universityId,university
+                              FROM university";
+            SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            ddlUni.DataValueField = "universityId";
+            ddlUni.DataTextField = "university";
+            ddlUni.DataSource = dr;
+            ddlUni.DataBind();
+        }
+
+        protected void ddlUni_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT templateId,template
+                              FROM template
+                              WHERE universityId= @universityId ";
+            Dictionary<string, object> myPara = new Dictionary<string, object>();
+            myPara.Add("@universityId", ddlUni.SelectedValue);
+            SqlDataReader dr = myCrud.getDrPassSql(mySql, myPara);
             ddlTemplate.DataValueField = "templateId";
             ddlTemplate.DataTextField = "template";
             ddlTemplate.DataSource = dr;
