@@ -78,12 +78,30 @@ namespace KsuTemplate.admin
             ddlTemplate.DataSource = dr;
             ddlTemplate.DataBind();
         }
+        public void ExportGridToExcel(GridView grd)
+        {
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+            grd.AllowPaging = false;
+            showInternData();
+            grd.RenderControl(hw);
+            string style = @"<style> .textmode { mso-number-format:\@; } </style>";
+            Response.Write(style);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+        }
 
         protected void btnExportToExcel_Click(object sender, EventArgs e)
         {
-          //  ExportGridToExcel(gvInternInfo);
+            ExportGridToExcel(gvInternInfo);
         }
-      
-        
+
+
     }
 }
