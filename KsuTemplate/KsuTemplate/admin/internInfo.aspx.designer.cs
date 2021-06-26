@@ -13,31 +13,31 @@ namespace KsuTemplate.admin {
     public partial class internInfo {
         
         /// <summary>
-        /// rbnForms control.
+        /// ddlUniversity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbnForms;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUniversity;
         
         /// <summary>
-        /// btnExportToWord control.
+        /// ddlTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportToWord;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTemplate;
         
         /// <summary>
-        /// btnShowAllIntern control.
+        /// btnShow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowAllIntern;
+        protected global::System.Web.UI.WebControls.Button btnShow;
         
         /// <summary>
         /// gvInternInfo control.
@@ -47,5 +47,14 @@ namespace KsuTemplate.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvInternInfo;
+        
+        /// <summary>
+        /// btnExportToExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExportToExcel;
     }
 }
