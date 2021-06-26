@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -41,15 +42,27 @@ namespace KsuTemplate.admin
             ddlTemplate.DataSource = dr;
             ddlTemplate.DataBind();
         }
+        protected void showInternData()
+        {
+            CRUD myCrud = new CRUD();
+            string mySql = @"select internId, intern, id, internMobile, university, major, internEmail from intern i
+            inner join university u on i.universityId = u.universityId inner join major m on i.majorId = m.majorId";
+            SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            gvInternInfo.DataSource = dr;
+            gvInternInfo.DataBind();
+        }
 
         protected void btnShow_Click(object sender, EventArgs e)
         {
+            /*
             CRUD myCrud = new CRUD();
             string mySql = @"select internId, intern, id, internMobile, university, major, internEmail from intern i 
             inner join university u on i.universityId= u.universityId inner join major m on i.majorId = m.majorId";
             SqlDataReader dr = myCrud.getDrPassSql(mySql);
             gvInternInfo.DataSource = dr;
-            gvInternInfo.DataBind();
+            gvInternInfo.DataBind(); */
+            showInternData();
+
         }
 
         protected void ddlUniversity_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,5 +78,12 @@ namespace KsuTemplate.admin
             ddlTemplate.DataSource = dr;
             ddlTemplate.DataBind();
         }
+
+        protected void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+          //  ExportGridToExcel(gvInternInfo);
+        }
+      
+        
     }
 }

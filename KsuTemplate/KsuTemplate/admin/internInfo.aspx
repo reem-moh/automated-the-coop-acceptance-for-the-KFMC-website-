@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 254px">
-                        <asp:Button ID="btnExportToExcel" runat="server" BackColor="#1C5085" CssClass="btn btn-primary btn-lg" ForeColor="White" Text="Export To Excel" Width="165px" />
+                        <asp:Button ID="btnExportToExcel" runat="server" BackColor="#1C5085" CssClass="btn btn-primary btn-lg" ForeColor="White" Text="Export To Excel" Width="165px" OnClick="btnExportToExcel_Click" />
                     </td>
                 </tr>
             </table>
