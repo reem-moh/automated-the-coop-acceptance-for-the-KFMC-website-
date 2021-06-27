@@ -192,7 +192,8 @@ namespace KsuTemplate.webpage
             {
                 insertInfo();
             }
-            sendNoti("reemq989@gmail.com");
+
+            sendNoti(txtEmail.Text);
         }
 
         protected void sendNoti(string email)
