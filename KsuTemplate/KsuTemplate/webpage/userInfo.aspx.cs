@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -191,9 +192,30 @@ namespace KsuTemplate.webpage
             {
                 insertInfo();
             }
-            
+            sendNoti("reemq989@gmail.com");
         }
 
+        protected void sendNoti(string email)
+        {
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress("kfmcintern@gmail.com");
+            mailMessage.To.Add(email);
+            mailMessage.Subject = "profile updated successfully";
+            //Message Body
+            mailMessage.Body = " You have successfully updated your profile. Congratulations!";
+
+            //Tell mail message the mail contain HTML objects:
+            mailMessage.IsBodyHtml = true;
+
+            //Send Mail Message: 
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new System.Net.NetworkCredential("kfmcintern@gmail.com", "KFMCIntern1234");
+
+            smtpClient.Send(mailMessage);
+
+        }
+        
         protected bool Authenticate()
         {
             string mySql = @"SELECT *

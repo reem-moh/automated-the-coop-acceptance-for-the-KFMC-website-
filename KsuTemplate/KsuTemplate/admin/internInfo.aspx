@@ -5,9 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
         <div class="jumbotron" style="text-align: center">
-
-
+            <h3 class="text-center">
+            <asp:Label ID="lblOutput" runat="server" ForeColor="#339966"></asp:Label>
+                </h3>
             <h2>
+                
                 <br />
                 Interns Information</h2>
             <p>

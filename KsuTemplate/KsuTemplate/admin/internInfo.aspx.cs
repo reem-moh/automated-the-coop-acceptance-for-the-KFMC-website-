@@ -150,6 +150,7 @@ namespace KsuTemplate.admin
         {
             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             doc.Save(desktop + formName + fileName, SaveFormat.Pdf);
+            lblOutput.Text= "Successfuly saved forms on Desktop ->" + formName;
         }
 
         protected Document mailMergeEffect(int internId)
@@ -601,7 +602,7 @@ namespace KsuTemplate.admin
             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // Send the document in Word format to the client browser with an option to save to disk or open inside the current browser.
             doc.Save(desktop + formName + fileName);
-
+            lblOutput.Text = "Successfuly saved forms on Desktop ->" + formName;
         }
     }
 }
