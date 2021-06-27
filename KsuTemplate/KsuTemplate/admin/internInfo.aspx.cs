@@ -111,6 +111,11 @@ namespace KsuTemplate.admin
             Response.Flush();
             Response.End();
         }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            /* Verifies that the control is rendered */
+        }
+
 
         protected void btnExportToExcel_Click(object sender, EventArgs e)
         {
