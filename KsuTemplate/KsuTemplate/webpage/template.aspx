@@ -3,14 +3,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <link href="CSS/contactStyleSheet1.css" rel="stylesheet" />
-    <h2  class="text-center">Intern Templates</h2>
+
+    <h3 class="text-center">
+            <asp:Label ID="lblOutput" runat="server" ForeColor="#339966"></asp:Label>
+    </h3>
+    <br />
+
     
 
     <div  class="jumbotron">
         <div class="wrap-contact100" style="text-align: center">
             <p class="text-center">
+                <h2  class="text-center">Intern Templates</h2>
+    
                 <br />
                 <br />
+
                 <asp:Label ID="lblUni" runat="server" Text="University:"></asp:Label>
                 <asp:DropDownList ID="ddlUni" runat="server" BorderColor="#E4E4E4" Height="30px" Width="220px" BorderStyle="Solid" AutoPostBack="True" OnSelectedIndexChanged="ddlUni_SelectedIndexChanged">
                 </asp:DropDownList>

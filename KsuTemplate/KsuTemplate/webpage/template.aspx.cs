@@ -469,6 +469,7 @@ namespace KsuTemplate.webpage
             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             // Send the document in Word format to the client browser with an option to save to disk or open inside the current browser.
             doc.Save(desktop + fileName);
+            lblOutput.Text = "Successfuly saved form on Desktop";
 
         }
 
@@ -476,6 +477,7 @@ namespace KsuTemplate.webpage
         {
             var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             doc.Save(desktop+ fileName, SaveFormat.Pdf);
+            lblOutput.Text = "Successfuly saved form on Desktop";
         }
 
         protected bool Authenticate()
