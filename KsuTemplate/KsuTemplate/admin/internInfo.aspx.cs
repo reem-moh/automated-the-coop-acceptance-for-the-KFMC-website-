@@ -64,9 +64,9 @@ namespace KsuTemplate.admin
             gvInternInfo.DataSource = dr;
             gvInternInfo.DataBind();
         }
-
-        protected void btnShow_Click(object sender, EventArgs e)
-        {
+        
+       // protected void btnShow_Click(object sender, EventArgs e)
+       // {
             /*
             CRUD myCrud = new CRUD();
             string mySql = @"select internId, intern, id, internMobile, university, major, internEmail from intern i 
@@ -74,9 +74,10 @@ namespace KsuTemplate.admin
             SqlDataReader dr = myCrud.getDrPassSql(mySql);
             gvInternInfo.DataSource = dr;
             gvInternInfo.DataBind(); */
-            showInternData();
+           // showInternData();
 
-        }
+      //  }
+                
 
         protected void ddlUniversity_SelectedIndexChanged(object sender, EventArgs e)
         {

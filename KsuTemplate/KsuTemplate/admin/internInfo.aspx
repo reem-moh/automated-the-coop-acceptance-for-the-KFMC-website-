@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td style="height: 91px; width: 254px">
-                        <asp:Button ID="btnShow" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" ForeColor="White" OnClick="btnShow_Click" Text="Show All Interns" Width="165px" />
+                        <asp:Button ID="btnExportToExcel" runat="server" BackColor="#1C5085" CssClass="btn btn-primary btn-lg" ForeColor="White" Text="Export To Excel" Width="165px" OnClick="btnExportToExcel_Click" />
                     </td>
                     <td rowspan="4">
                         <br />
@@ -43,20 +43,19 @@
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 254px">
-                        <asp:Button ID="btnExportToExcel" runat="server" BackColor="#1C5085" CssClass="btn btn-primary btn-lg" ForeColor="White" Text="Export To Excel" Width="165px" OnClick="btnExportToExcel_Click" />
+                        <asp:Button ID="btnExportToPdf" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Pdf" Width="165px" OnClick="btnExportToPdf_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 254px; height: 71px;">
                         <br />
-                        <asp:Button ID="btnExportToPdf" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Pdf" Width="165px" OnClick="btnExportToPdf_Click" />
+                        <asp:Button ID="btnExportToWord" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Word" Width="165px" OnClick="btnExportToWord_Click" />
                         <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 254px">
                         <br />
-                        <asp:Button ID="btnExportToWord" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Word" Width="165px" OnClick="btnExportToWord_Click" />
                         <br />
                     </td>
                 </tr>
