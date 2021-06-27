@@ -32,7 +32,11 @@
                 <br /> <br />
                 <form>
                     <p><strong>KFMC Interns</strong><br />
-                        The website that receives the information of KSU trainees. To make it easier for King Fahad Medical City to fill out forms for trainees.</p>
+
+                        The website receives the information of KSU trainees.
+                         <br />
+                        To fill the needs form automatically for both interns and KFMC.</p>
+
                     <br /> <strong>Our Team</strong><br/>
                     <p>902 MH-I Norah Almaneea <br />1096 SD-I Reem Algabani <br /> 1114 Meaad</p>
 <!-- Meaad information need to be updated-->
