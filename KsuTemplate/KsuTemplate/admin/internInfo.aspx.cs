@@ -17,6 +17,7 @@ namespace KsuTemplate.admin
             if (!Page.IsPostBack)  // means do it only once for each user session 
             {
                 populateUniversityComb();
+                populateUniversityTemplateComb();
             }
 
         }

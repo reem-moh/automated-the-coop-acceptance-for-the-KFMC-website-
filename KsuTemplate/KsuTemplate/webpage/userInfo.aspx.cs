@@ -73,6 +73,7 @@ namespace KsuTemplate.webpage
             {
                 populateMajorCombo();
                 populateUniversityCombo();
+                populatTrackCombo();
             }
 
         }
@@ -135,6 +136,18 @@ namespace KsuTemplate.webpage
             ddlMajor.DataValueField = "majorId";
             ddlMajor.DataSource = dr;
             ddlMajor.DataBind();
+        }
+
+        protected void populatTrackCombo()
+        {
+            CRUD myCrud = new CRUD();
+            string mySql = @"SELECT trackId,track
+                                    FROM track";
+            SqlDataReader dr = myCrud.getDrPassSql(mySql);
+            ddlTrack.DataTextField = "track";
+            ddlTrack.DataValueField = "trackId";
+            ddlTrack.DataSource = dr;
+            ddlTrack.DataBind();
         }
 
         protected void populateUniversityCombo()
@@ -201,9 +214,9 @@ namespace KsuTemplate.webpage
             {
                 CRUD myCrud = new CRUD();
                 string mySql = @"INSERT INTO intern (intern,majorId,trackId,id,internMobile,
-                                                telephone,internEmail,startDate,endDate,userName)
+                                                telephone,internEmail,startDate,endDate,userName,universityId)
                              VALUES (@intern, @majorId,@trackId,@id,@internMobile,@telephone,
-                                      @internEmail,@startDate,@endDate,@userName)";
+                                      @internEmail,@startDate,@endDate,@userName,@universityId)";
 
                 Dictionary<String, object> myPara = new Dictionary<String, object>();
                 myPara.Add("@intern", txtIntern.Text);
@@ -216,6 +229,7 @@ namespace KsuTemplate.webpage
                 myPara.Add("@startDate", txtSDate.Text);
                 myPara.Add("@endDate", txtEDate.Text);
                 myPara.Add("@userName", Session["Username"]);
+                myPara.Add("@universityId", ddlUni.SelectedValue);
 
                 int rtn = myCrud.InsertUpdateDelete(mySql, myPara);
                 if (rtn >= 1)
@@ -259,7 +273,7 @@ namespace KsuTemplate.webpage
                                   SET intern=@intern,majorId=@majorId,trackId=@trackId,
                                   id=@id,internMobile=@internMobile,
                                   telephone=@telephone,internEmail= @internEmail,
-                                  startDate=@startDate,endDate=@endDate
+                                  startDate=@startDate,endDate=@endDate,universityId = @universityId
                                   WHERE userName = @userName";
 
                 Dictionary<String, object> myPara = new Dictionary<String, object>();
@@ -273,6 +287,8 @@ namespace KsuTemplate.webpage
                 myPara.Add("@startDate", txtSDate.Text);
                 myPara.Add("@endDate", txtEDate.Text);
                 myPara.Add("@userName", Session["Username"]);
+                myPara.Add("@universityId", ddlUni.SelectedValue);
+                
 
                 int rtn = myCrud.InsertUpdateDelete(mySql, myPara);
 

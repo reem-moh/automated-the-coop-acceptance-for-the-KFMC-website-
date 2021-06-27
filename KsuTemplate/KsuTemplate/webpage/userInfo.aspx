@@ -69,7 +69,7 @@
 
                 <tr>
                     <td colspan="4"; style="text-align: center ;width: 108px; height: 60px" >
-                        <p>You need to follow this format YYYY-DD-MM</p> 
+                        <p>You need to follow this format YYYY-MM-DD</p> 
                     </td>
                 </tr>
 
