@@ -25,7 +25,7 @@
                     <td style="height: 91px; width: 254px">
                         <asp:Button ID="btnShow" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" ForeColor="White" OnClick="btnShow_Click" Text="Show All Interns" Width="165px" />
                     </td>
-                    <td rowspan="2">
+                    <td rowspan="4">
                         <br />
                         <asp:GridView ID="gvInternInfo" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" style="margin-left: 55px" Width="487px">
                             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -43,6 +43,20 @@
                 <tr>
                     <td class="modal-sm" style="width: 254px">
                         <asp:Button ID="btnExportToExcel" runat="server" BackColor="#1C5085" CssClass="btn btn-primary btn-lg" ForeColor="White" Text="Export To Excel" Width="165px" OnClick="btnExportToExcel_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="modal-sm" style="width: 254px; height: 71px;">
+                        <br />
+                        <asp:Button ID="btnExportToPdf" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Pdf" Width="165px" />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="modal-sm" style="width: 254px">
+                        <br />
+                        <asp:Button ID="btnExportToWord" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Word" Width="165px" />
+                        <br />
                     </td>
                 </tr>
             </table>
