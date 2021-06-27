@@ -20,7 +20,7 @@
                 </tr>
 
 
-                <%-- Name --%>
+                <%-- login --%>
                 <tr>
                     <td class="text-center" style="width: 108px; height: 60px">User Name</td>
                     <td style="height: 60px">
@@ -52,6 +52,10 @@
                 </tr>
             </table>
 
+            <asp:Label ID="lblFP" runat="server" Text="Forget password?"></asp:Label>
+            <asp:Label ID="lblFP1" runat="server"><a runat="server" href="~/Account/passwordRecovery">Recover password</a></asp:Label>
+            <br />
+            <br />
 
 
             <asp:Label ID="lblReg" runat="server" Text="Don't have an account?"></asp:Label>

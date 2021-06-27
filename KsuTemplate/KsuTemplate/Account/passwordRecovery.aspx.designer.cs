@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KsuTemplate.admin {
+namespace KsuTemplate.Account {
     
     
     public partial class passwordRecovery {

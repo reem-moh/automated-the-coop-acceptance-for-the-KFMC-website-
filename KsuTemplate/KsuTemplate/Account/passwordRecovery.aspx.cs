@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace KsuTemplate.admin
+namespace KsuTemplate.Account
 {
     public partial class passwordRecovery : System.Web.UI.Page
     {

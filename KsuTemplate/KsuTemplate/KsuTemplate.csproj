@@ -117,7 +117,7 @@
     <Content Include="admin\changePassword.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\internInfo.aspx" />
-    <Content Include="admin\passwordRecovery.aspx" />
+    <Content Include="Account\passwordRecovery.aspx" />
     <Content Include="admin\register.aspx" />
     <Content Include="admin\showRoles.aspx" />
     <Content Include="admin\trainingPlan.aspx" />
@@ -220,11 +220,11 @@
     <Compile Include="admin\internInfo.aspx.designer.cs">
       <DependentUpon>internInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\passwordRecovery.aspx.cs">
+    <Compile Include="Account\passwordRecovery.aspx.cs">
       <DependentUpon>passwordRecovery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\passwordRecovery.aspx.designer.cs">
+    <Compile Include="Account\passwordRecovery.aspx.designer.cs">
       <DependentUpon>passwordRecovery.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\register.aspx.cs">
