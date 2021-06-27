@@ -19,6 +19,7 @@
                         </asp:DropDownList>
 &nbsp;<asp:DropDownList ID="ddlTemplate" runat="server" Height="19px" Width="135px">
                         </asp:DropDownList>
+                    &nbsp;
                     </td>
                 </tr>
                 <tr>
@@ -48,14 +49,14 @@
                 <tr>
                     <td class="modal-sm" style="width: 254px; height: 71px;">
                         <br />
-                        <asp:Button ID="btnExportToPdf" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Pdf" Width="165px" />
+                        <asp:Button ID="btnExportToPdf" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Pdf" Width="165px" OnClick="btnExportToPdf_Click" />
                         <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="modal-sm" style="width: 254px">
                         <br />
-                        <asp:Button ID="btnExportToWord" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Word" Width="165px" />
+                        <asp:Button ID="btnExportToWord" runat="server" BackColor="#2E5882" CssClass="btn btn-primary btn-lg" Text="Export To Word" Width="165px" OnClick="btnExportToWord_Click" />
                         <br />
                     </td>
                 </tr>
