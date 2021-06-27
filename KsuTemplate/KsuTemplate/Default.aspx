@@ -7,6 +7,7 @@
         <p class="lead">The easiest way to fill your needs form!</p>
         <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
             <AnonymousTemplate>
+                <br>
                 </br>
                 <p>
                     <a href="Account/Login.aspx" class="btn btn-primary btn-lg">Log In</a>
@@ -14,20 +15,21 @@
                 </p>
             </AnonymousTemplate>
             <LoggedInTemplate>
+                <br />
                 <p class="lead"> Welcome 
                 
                     <asp:LoginName ID="HeadLoginName" runat="server" />
                 </p>
-                </br>
-                </br>
-                <a href="webpage/userInfo.aspx" class="btn btn-primary btn-lg">Profile</a>
-                <a href="webpage/template.aspx" class="btn btn-primary btn-lg">Template</a>
+                
                 <asp:LoginStatus class="btn btn-primary btn-lg" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
                  LogoutPageUrl="~/default.aspx" />
             </LoggedInTemplate>
         </asp:LoginView>
 
 
+        <asp:Button ID="btnUserInfo" class="btn btn-primary btn-lg" runat="server" Text="Profile" OnClick="btnUserInfo_Click" />
+        
+        <asp:Button ID="btnTemplate" class="btn btn-primary btn-lg" runat="server" Text="Template" OnClick="btnTemplate_Click" />
 
     </div>
     <!--
