@@ -68,10 +68,10 @@
             <input id="nav-toggle" type="checkbox">
             <div class="logo">KFMC<strong>Interns</strong></div>
             <ul class="links">
-                <li><a runat="server" href="~/">Home</a></li>
-                <li><a runat="server" href="~/About">About</a></li>
-                <li><a runat="server" href="~/Contact">Contact</a></li>
-                <li><a runat="server" href="~/admin/default">Admin</a></li>
+                <li><a runat="server" id="home" href="~/">Home</a></li>
+                <li><a runat="server" id="about" href="~/About">About</a></li>
+                <li><a runat="server" id="contact" href="~/Contact">Contact</a></li>
+                <li><a runat="server" id="Admin" href="~/admin/default">Admin</a></li>
 
             </ul>
             <label for="nav-toggle" class="icon-burger">
