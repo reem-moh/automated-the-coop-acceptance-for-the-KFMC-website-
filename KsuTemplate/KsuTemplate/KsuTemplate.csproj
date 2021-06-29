@@ -117,6 +117,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Registration.aspx" />
+    <Content Include="admin\Ajax\WebForm1.aspx" />
     <Content Include="admin\changePassword.aspx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\internInfo.aspx" />
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="Account\Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Ajax\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Ajax\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\changePassword.aspx.cs">
       <DependentUpon>changePassword.aspx</DependentUpon>
