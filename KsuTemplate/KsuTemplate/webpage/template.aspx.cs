@@ -12,6 +12,7 @@ using System.Data.OleDb;
 using Aspose.Words.MailMerging;
 using KsuTemplate.App_Code;
 using System.Data.SqlClient;
+using Ionic.Zip;
 
 namespace KsuTemplate.webpage
 {
@@ -466,18 +467,33 @@ namespace KsuTemplate.webpage
 
         protected void saveAsDoc(Document doc, String fileName)
         {
-            var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            // Send the document in Word format to the client browser with an option to save to disk or open inside the current browser.
-            doc.Save(desktop + fileName);
-            lblOutput.Text = "Successfuly saved form on Desktop";
+            HttpResponse Response = HttpContext.Current.Response;
+
+            if (Response != null)
+            {
+                Response.Clear();
+                Response.Buffer = true;
+                doc.Save(Response, fileName, ContentDisposition.Attachment, null);
+                Response.Flush();
+                Response.End();
+
+            }
 
         }
 
         protected void saveAsPdf(Document doc, String fileName)
         {
-            var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            doc.Save(desktop+ fileName, SaveFormat.Pdf);
-            lblOutput.Text = "Successfuly saved form on Desktop";
+            HttpResponse Response = HttpContext.Current.Response;
+
+            if (Response != null)
+            {
+                Response.Clear();
+                Response.Buffer = true;
+                doc.Save(Response, fileName, ContentDisposition.Attachment, null);
+                Response.Flush();
+                Response.End();
+
+            }
         }
 
         protected bool Authenticate()
@@ -503,12 +519,12 @@ namespace KsuTemplate.webpage
             if (ddlTemplate.SelectedValue == "1")
             {
                 Document doc = mailMergeEffect();
-                saveAsDoc(doc, "\\effectNoticeDate.docx");
+                saveAsDoc(doc, "effectNoticeDate.docx");
             }
             else if (ddlTemplate.SelectedValue == "3")
             {
                 Document doc = mailMergeptPlan();
-                saveAsDoc(doc, "\\ptPlan.docx");
+                saveAsDoc(doc, "ptPlan.docx");
             }
 
             
@@ -525,12 +541,12 @@ namespace KsuTemplate.webpage
             if (ddlTemplate.SelectedValue == "1")
             {
                 Document doc = mailMergeEffect();
-                saveAsPdf(doc, "\\effective.Pdf");
+                saveAsPdf(doc, "effective.Pdf");
             }
             else if (ddlTemplate.SelectedValue == "3")
             {
                 Document doc = mailMergeptPlan();
-                saveAsPdf(doc, "\\ptPlan.Pdf");
+                saveAsPdf(doc, "ptPlan.Pdf");
             }
 
         }

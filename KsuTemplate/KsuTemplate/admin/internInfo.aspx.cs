@@ -134,23 +134,32 @@ namespace KsuTemplate.admin
                 if (ddlTemplate.SelectedValue == "1")
                 {
                     Document doc = mailMergeEffect(internId);
-                    String formName = "\\effectNoticeDataFormsPdf";
-                    saveAsPdf(doc, formName, "\\effectNoticeData_internId_" + internId + "_.Pdf");
+                    
+                    saveAsPdf(doc, "effectNoticeData_internId_" + internId + "_.Pdf");
                 }
                 else if (ddlTemplate.SelectedValue == "3")
                 {
                     Document doc = mailMergeptPlan(internId);
-                    String formName = "\\ptPlanFormsPdf";
-                    saveAsPdf(doc, formName, "\\pt_plan_form_internId_" + internId + "_.Pdf");
+                    
+                    saveAsPdf(doc, "pt_plan_form_internId_" + internId + "_.Pdf");
                 }
             }
         }
 
-        protected void saveAsPdf(Document doc, String formName, String fileName)
+        protected void saveAsPdf(Document doc, String fileName)
         {
-            var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            doc.Save(desktop + formName + fileName, SaveFormat.Pdf);
-            lblOutput.Text= "Successfuly saved forms on Desktop ->" + formName;
+            
+            HttpResponse Response = HttpContext.Current.Response;
+
+            if (Response != null)
+            {
+                Response.Clear();
+                Response.Buffer = true;
+                doc.Save(Response, fileName, ContentDisposition.Attachment, null);
+                Response.Flush();
+                Response.End();
+                
+            }
         }
 
         protected Document mailMergeEffect(int internId)
@@ -584,25 +593,33 @@ namespace KsuTemplate.admin
                 if (ddlTemplate.SelectedValue == "1")
                 {
                     Document doc = mailMergeEffect(internId);
-                    String formName = "\\effectNoticeDataFormsDoc";
-                    saveAsPdf(doc, formName, "\\effectNoticeData_internId_" + internId + "_.docx");
+                    
+                    saveAsDoc(doc, "effectNoticeData_internId_" + internId + "_.docx");
                 }
                 else if (ddlTemplate.SelectedValue == "3")
                 {
                     Document doc = mailMergeptPlan(internId);
-                    String formName = "\\ptPlanFormsDoc";
-                    saveAsPdf(doc, formName, "\\pt_plan_form_internId_" + internId + "_.docx");
+                    saveAsDoc(doc, "pt_plan_form_internId_" + internId + "_.docx");
                 }
             }
 
         }
 
-        protected void saveAsDoc(Document doc, String formName, String fileName)
+        protected void saveAsDoc(Document doc, String fileName)
         {
-            var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            // Send the document in Word format to the client browser with an option to save to disk or open inside the current browser.
-            doc.Save(desktop + formName + fileName);
-            lblOutput.Text = "Successfuly saved forms on Desktop ->" + formName;
+           
+            HttpResponse Response = HttpContext.Current.Response;
+
+            if (Response != null)
+            {
+                Response.Clear();
+                Response.Buffer = true;
+                doc.Save(Response, fileName, ContentDisposition.Attachment, null);
+                Response.Flush();
+                Response.End();
+                
+            }
+          
         }
     }
 }
