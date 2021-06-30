@@ -95,16 +95,31 @@ namespace KsuTemplate.admin
 
         public void ExportGridToExcel(GridView grd)
         {
+
+
+            TableCell Cell;
+            
+            for (int Index = 0; Index < grd.HeaderRow.Cells.Count; Index++)
+            {
+                Cell = grd.HeaderRow.Cells[Index];
+                if (Cell.Text.ToString() == "Export to")
+                    grd.Columns[Index].Visible = false;
+            }
+
+
+
+
             Response.Clear();
+            GridView g=grd;
             Response.Buffer = true;
             Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             StringWriter sw = new StringWriter();
             HtmlTextWriter hw = new HtmlTextWriter(sw);
-            grd.AllowPaging = false;
+            g.AllowPaging = false;
             showInternData();
-            grd.RenderControl(hw);
+            g.RenderControl(hw);
             string style = @"<style> .textmode { mso-number-format:\@; } </style>";
             Response.Write(style);
             Response.Output.Write(sw.ToString());
