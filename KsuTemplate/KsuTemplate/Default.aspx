@@ -31,6 +31,12 @@
         
         <asp:Button ID="btnTemplate" class="btn btn-primary btn-lg" runat="server" Text="Template" OnClick="btnTemplate_Click" />
 
+        <asp:Button ID="btnShowRoles" class="btn btn-primary btn-lg" runat="server" Text="Show Roles" OnClick="btnShowRoles_Click" />
+
+        <asp:Button ID="btnInternInfo" class="btn btn-primary btn-lg" runat="server" Text="Intern Information" OnClick="btnInternInfo_Click" />
+
+        <asp:Button ID="btnTrainingPlan" class="btn btn-primary btn-lg" runat="server" Text="Training Plan" OnClick="btnTrainingPlan_Click" />
+
     </div>
     <!--
     <div class="row">

@@ -12,7 +12,6 @@ using System.Data.OleDb;
 using Aspose.Words.MailMerging;
 using KsuTemplate.App_Code;
 using System.Data.SqlClient;
-using Ionic.Zip;
 
 namespace KsuTemplate.webpage
 {

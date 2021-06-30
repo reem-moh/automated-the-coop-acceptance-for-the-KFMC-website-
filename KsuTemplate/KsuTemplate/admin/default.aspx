@@ -13,7 +13,7 @@ div {text-align: center;}
     <pre>
     &nbsp
     
-        <a runat="server" href="~/admin/internInfo" class="btn btn-primary btn-lg">Interns Informations</a>        <a runat="server" href="~/admin/trainingPlan" class="btn btn-primary btn-lg">Training Plan</a>
+        <a runat="server" href="~/admin/internInfo" class="btn btn-primary btn-lg">Interns Informations</a>        <a runat="server" href="~/admin/trainingPlan" class="btn btn-primary btn-lg">Training Plan</a>        <a runat="server" href="~/admin/showRoles" class="btn btn-primary btn-lg">Show Roles</a>
 
    </pre>
         </div>

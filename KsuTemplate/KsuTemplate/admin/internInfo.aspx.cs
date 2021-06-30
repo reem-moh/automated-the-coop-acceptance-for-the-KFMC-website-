@@ -95,16 +95,31 @@ namespace KsuTemplate.admin
 
         public void ExportGridToExcel(GridView grd)
         {
+
+
+            TableCell Cell;
+            
+            for (int Index = 0; Index < grd.HeaderRow.Cells.Count; Index++)
+            {
+                Cell = grd.HeaderRow.Cells[Index];
+                if (Cell.Text.ToString() == "Export to")
+                    grd.Columns[Index].Visible = false;
+            }
+
+
+
+
             Response.Clear();
+            GridView g=grd;
             Response.Buffer = true;
             Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             StringWriter sw = new StringWriter();
             HtmlTextWriter hw = new HtmlTextWriter(sw);
-            grd.AllowPaging = false;
+            g.AllowPaging = false;
             showInternData();
-            grd.RenderControl(hw);
+            g.RenderControl(hw);
             string style = @"<style> .textmode { mso-number-format:\@; } </style>";
             Response.Write(style);
             Response.Output.Write(sw.ToString());
@@ -120,46 +135,6 @@ namespace KsuTemplate.admin
         protected void btnExportToExcel_Click(object sender, EventArgs e)
         {
             ExportGridToExcel(gvInternInfo);
-        }
-
-        protected void btnExportToPdf_Click(object sender, EventArgs e)
-        {
-            
-            String selectedTemplate = ddlTemplate.SelectedValue;
-            showInternData();
-            for (int i = 0; i < dr.Rows.Count; i++)
-            {
-                int internId = int.Parse(dr.Rows[i][0].ToString());
-                
-                if (ddlTemplate.SelectedValue == "1")
-                {
-                    Document doc = mailMergeEffect(internId);
-                    
-                    saveAsPdf(doc, "effectNoticeData_internId_" + internId + "_.Pdf");
-                }
-                else if (ddlTemplate.SelectedValue == "3")
-                {
-                    Document doc = mailMergeptPlan(internId);
-                    
-                    saveAsPdf(doc, "pt_plan_form_internId_" + internId + "_.Pdf");
-                }
-            }
-        }
-
-        protected void saveAsPdf(Document doc, String fileName)
-        {
-            
-            HttpResponse Response = HttpContext.Current.Response;
-
-            if (Response != null)
-            {
-                Response.Clear();
-                Response.Buffer = true;
-                doc.Save(Response, fileName, ContentDisposition.Attachment, null);
-                Response.Flush();
-                Response.End();
-                
-            }
         }
 
         protected Document mailMergeEffect(int internId)
@@ -586,26 +561,54 @@ namespace KsuTemplate.admin
         {
             String selectedTemplate = ddlTemplate.SelectedValue;
             showInternData();
-            for (int i = 0; i < dr.Rows.Count; i++)
-            {
-                int internId = int.Parse(dr.Rows[i][0].ToString());
+           
+            GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+            int index = gvRow.RowIndex;
+
+            int internId = int.Parse(dr.Rows[index][0].ToString());
 
                 if (ddlTemplate.SelectedValue == "1")
                 {
                     Document doc = mailMergeEffect(internId);
                     
-                    saveAsDoc(doc, "effectNoticeData_internId_" + internId + "_.docx");
+                    save(doc, "effectNoticeData_internId_" + internId + "_.docx");
                 }
                 else if (ddlTemplate.SelectedValue == "3")
                 {
                     Document doc = mailMergeptPlan(internId);
-                    saveAsDoc(doc, "pt_plan_form_internId_" + internId + "_.docx");
+                    save(doc, "pt_plan_form_internId_" + internId + "_.docx");
                 }
-            }
+            
 
         }
 
-        protected void saveAsDoc(Document doc, String fileName)
+        protected void btnExportToPdf_Click(object sender, EventArgs e)
+        {
+
+            String selectedTemplate = ddlTemplate.SelectedValue;
+            showInternData();
+
+            GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+            int index = gvRow.RowIndex;
+
+            int internId = int.Parse(dr.Rows[index][0].ToString());
+
+                if (ddlTemplate.SelectedValue == "1")
+                {
+                    Document doc = mailMergeEffect(internId);
+
+                    save(doc, "effectNoticeData_internId_" + internId + "_.Pdf");
+                }
+                else if (ddlTemplate.SelectedValue == "3")
+                {
+                    Document doc = mailMergeptPlan(internId);
+
+                    save(doc, "pt_plan_form_internId_" + internId + "_.Pdf");
+                }
+            
+        }
+
+        protected void save(Document doc, String fileName)
         {
            
             HttpResponse Response = HttpContext.Current.Response;
@@ -621,5 +624,6 @@ namespace KsuTemplate.admin
             }
           
         }
+
     }
 }

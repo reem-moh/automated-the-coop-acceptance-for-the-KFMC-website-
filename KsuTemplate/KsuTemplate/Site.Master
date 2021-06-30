@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - KFMC Interns</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -66,12 +66,19 @@
         <!--New Navigation Bar-->
         <nav>
             <input id="nav-toggle" type="checkbox">
-            <div class="logo">KFMC<strong>Interns</strong></div>
+            <%--<div class="logo">KFMC<strong>Interns</strong></div>--%>
+            <div class="logo">
+                <a runat="server" id="A1" href="~/">
+                    <asp:Image ID="Image1" runat="server" Width="100" Height="100" align="left" ImageUrl="~/webpage/image/kfcc.JPG" />
+                </a>
+                KFMC<strong>Interns</strong>
+
+            </div>
             <ul class="links">
-                <li><a runat="server" href="~/">Home</a></li>
-                <li><a runat="server" href="~/About">About</a></li>
-                <li><a runat="server" href="~/Contact">Contact</a></li>
-                <li><a runat="server" href="~/admin/default">Admin</a></li>
+                <li><a runat="server" id="home" href="~/">Home</a></li>
+                <li><a runat="server" id="about" href="~/About">About</a></li>
+                <li><a runat="server" id="contact" href="~/Contact">Contact</a></li>
+                <li><a runat="server" id="Admin" href="~/admin/default">Admin</a></li>
 
             </ul>
             <label for="nav-toggle" class="icon-burger">

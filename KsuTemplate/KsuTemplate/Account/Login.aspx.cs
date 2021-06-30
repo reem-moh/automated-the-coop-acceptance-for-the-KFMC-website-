@@ -36,10 +36,10 @@ namespace KsuTemplate.Account
             {
                 string strExistingAdmin = "";
                 string strAppName = "/KsuTemplate";
-                string strAdminUserName = "reem";  //txtUserName.Text;
-                string strAdminPassword = "reem"; //txtPassword.Text;
+                string strAdminUserName = "admin";  //txtUserName.Text;
+                string strAdminPassword = "admin"; //txtPassword.Text;
                 string strRoleName = "admin";
-                string strEmail = "reemq989@gmail.com";
+                string strEmail = "admin@gmail.com";
                 strAppName = Membership.ApplicationName.ToString();
                 CRUD myCrud = new CRUD();
                 Dictionary<string, object> myPara = new Dictionary<string, object>();
@@ -89,7 +89,7 @@ namespace KsuTemplate.Account
                 string strRoleName = "admin";
                 if (Roles.IsUserInRole(txtUserName.Text, strRoleName))
                 {
-                    Response.Redirect("\\admin\\default.aspx");
+                    Response.Redirect("~\\Default.aspx");
                 }
                 else
                 {

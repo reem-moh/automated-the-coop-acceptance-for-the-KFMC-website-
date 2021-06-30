@@ -147,6 +147,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CSS\navigationStyleSheet.css" />
+    <Content Include="webpage\image\kfcc.JPG" />
     <Content Include="webpage\template.aspx" />
     <Content Include="webpage\userInfo.aspx" />
     <Content Include="admin\Web.config" />

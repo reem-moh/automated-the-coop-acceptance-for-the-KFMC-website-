@@ -11,7 +11,12 @@ namespace KsuTemplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            { 
+                //Hide navigation based on role!
+                Admin.Visible = this.Page.User.IsInRole("admin");
+                
+            }
         }
     }
 }
