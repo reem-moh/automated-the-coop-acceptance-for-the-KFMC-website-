@@ -66,7 +66,12 @@
         <!--New Navigation Bar-->
         <nav>
             <input id="nav-toggle" type="checkbox">
-            <div class="logo">KFMC<strong>Interns</strong></div>
+            <%--<div class="logo">KFMC<strong>Interns</strong></div>--%>
+            <div class="logo">
+                <asp:Image ID="Image1" runat="server"  Width="100" Height="100" align="left" ImageUrl="~/webpage/image/kfcc.JPG" />
+                KFMC<strong>Interns</strong>
+
+            </div>
             <ul class="links">
                 <li><a runat="server" id="home" href="~/">Home</a></li>
                 <li><a runat="server" id="about" href="~/About">About</a></li>
