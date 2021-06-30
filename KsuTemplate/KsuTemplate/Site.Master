@@ -68,7 +68,9 @@
             <input id="nav-toggle" type="checkbox">
             <%--<div class="logo">KFMC<strong>Interns</strong></div>--%>
             <div class="logo">
-                <asp:Image ID="Image1" runat="server"  Width="100" Height="100" align="left" ImageUrl="~/webpage/image/kfcc.JPG" />
+                <a runat="server" id="A1" href="~/">
+                    <asp:Image ID="Image1" runat="server" Width="100" Height="100" align="left" ImageUrl="~/webpage/image/kfcc.JPG" />
+                </a>
                 KFMC<strong>Interns</strong>
 
             </div>
