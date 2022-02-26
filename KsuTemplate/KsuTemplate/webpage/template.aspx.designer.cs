@@ -7,81 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KsuTemplate {
+namespace KsuTemplate.webpage {
     
     
-    public partial class SiteMaster {
+    public partial class template {
         
         /// <summary>
-        /// A1 control.
+        /// lblOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.Label lblOutput;
         
         /// <summary>
-        /// Image1 control.
+        /// lblUni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Label lblUni;
         
         /// <summary>
-        /// home control.
+        /// ddlUni control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor home;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUni;
         
         /// <summary>
-        /// about control.
+        /// lblTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor about;
+        protected global::System.Web.UI.WebControls.Label lblTemplate;
         
         /// <summary>
-        /// contact control.
+        /// ddlTemplate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor contact;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTemplate;
         
         /// <summary>
-        /// Admin control.
+        /// lblData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Admin;
+        protected global::System.Web.UI.WebControls.Label lblData;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// lblExport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lblExport;
         
         /// <summary>
-        /// MainContent control.
+        /// btnDoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btnDoc;
+        
+        /// <summary>
+        /// btnPdf control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPdf;
     }
 }

@@ -7,63 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KsuTemplate {
+namespace KsuTemplate.admin {
     
     
-    public partial class _Default {
+    public partial class trainingPlan {
         
         /// <summary>
-        /// HeadLoginView control.
+        /// lblOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView HeadLoginView;
+        protected global::System.Web.UI.WebControls.Label lblOutput;
         
         /// <summary>
-        /// btnUserInfo control.
+        /// txtSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUserInfo;
+        protected global::System.Web.UI.WebControls.TextBox txtSummary;
         
         /// <summary>
-        /// btnTemplate control.
+        /// txtOutcomes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTemplate;
+        protected global::System.Web.UI.WebControls.TextBox txtOutcomes;
         
         /// <summary>
-        /// btnShowRoles control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowRoles;
-        
-        /// <summary>
-        /// btnInternInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInternInfo;
-        
-        /// <summary>
-        /// btnTrainingPlan control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTrainingPlan;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
     }
 }
